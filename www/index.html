@@ -2,18 +2,20 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src https://iseestudios.com:*">
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
         
         <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="fontawesome-pro-5.8.2-web 2/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="dispatch/dispatch.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+        <script src="input-mask/jquery.inputmask.js"></script>
         
         <script src="dispatch/dispatch.min.js"></script>
         
@@ -38,15 +40,41 @@
                     <h2 class="text-center d-none">Loyalty App</h2>
                     
                     
-                    <div id="login_screen" class="mt-5">
+                    <div id="scr_login" class="mt-5 screen">
+                        <form class="ajaxform" data-module="https://iseestudios.com/services" data-action="check_phone_number">
+                            <label>Phone Number (numbers only)</label>
+                            <input type="text" id="phone_number" class="courier form-control text-center form-control-lg" name="phone_number" value="" placeholder="Phone number" />
+                            <div class="mt-5">
+                                <button type="submit" class="btn btn-block btn-primary ">Register Phone</button>
+                            </div>
+                        </form>
                         
+                        <!--
+                            
                         <a href="#" class="btn btn-block btn-primary btn-lg">Signup with Email</a>
                         
                         <div class="mt-5 mb-5 text-center"> - or - </div>
                         
-                        <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fab fa-facebook"></i> Facebook</a>
-                        <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fab fa-google"></i> Google</a>
-                        <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://iseestudios.com/services/hybrid_authorize/Facebook" class="btn btn-primary btn-block btn-lg"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://iseestudios.com/services/hybrid_authorize/Google" class="btn btn-primary btn-block btn-lg"><i class="fab fa-google"></i> Google</a>
+                        <a href="https://iseestudios.com/services/hybrid_authorize/Linkedin" class="btn btn-primary btn-block btn-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        -->
+                        
+                    </div>
+                    
+                    <div id="scr_confirm" class="mt-5 screen">
+                        <form class="ajaxform" data-module="https://iseestudios.com/services" data-action="verify_phone_number">
+                            <label>Verify Phone</label>
+                            <input type="hidden" name="phone_number" id="hidden_phone_number" />
+                            <input type="text" id="verify_code" class="courier form-control text-center form-control-lg" name="verify_code" value="" placeholder="Phone number" />
+                            <div class="mt-5">
+                                <button type="submit" class="btn btn-block btn-primary ">Verify Phone</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    
+                    <div id="scr_dashboard" class="screen">
                         
                     </div>
                     

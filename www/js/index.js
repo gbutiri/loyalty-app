@@ -2,8 +2,8 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        
-        
+        $('#phone_number').inputmask({"mask": "(999) 999-9999"});
+        $('#verify_code').inputmask({"mask": "999999"});
     },
 
     // deviceready Event Handler

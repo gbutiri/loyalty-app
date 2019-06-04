@@ -1,0 +1,35 @@
+label {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    font-size: 12px;
+}
+
+::-webkit-input-placeholder { /* Webkit */
+   color: #ddd !important;
+}
+ 
+:-moz-placeholder { /* Firefox 18-4 */
+   color: #ddd !important;
+}
+ 
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ddd !important;
+}
+ 
+:-ms-input-placeholder {  /*  IE10+  */
+   color: #ddd !important;
+}
+
+#phone_number, #verify_code {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+#scr_confirm, #scr_dashboard {
+    display: none;
+}
+
+.courier {
+    font-family: 'Courier New';
+}
