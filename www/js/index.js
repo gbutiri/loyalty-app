@@ -35,14 +35,7 @@ var app = {
             });
         }
 
-        $(document).on('click', '#btn_load_money', function(e) {
-            e.preventDefault();
-            
-            cordova.plugins.stripe.setPublishableKey('pk_test_1Z2FRvwJiwCHAZNGAo9XBQNP00FmoJab2a');
-            
-            
-            
-        }).on('click', '.show-screen', function (e) {
+        $(document).on('click', '.show-screen', function (e) {
             e.preventDefault();
             
             var $this = $(this);
@@ -53,6 +46,11 @@ var app = {
             
             $this.closest('.screen').slideUp(200);
             $screen.slideDown(200);
+        }).on('click', '#btn_add_funds', function(e) {
+            e.preventDefault();
+            cordova.plugins.stripe.setPublishableKey('pk_test_1Z2FRvwJiwCHAZNGAo9XBQNP00FmoJab2a');
+            
+            
         });
         
     },
