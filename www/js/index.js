@@ -34,6 +34,27 @@ var app = {
                 },
             });
         }
+
+        $(document).on('click', '#btn_load_money', function(e) {
+            e.preventDefault();
+            
+            cordova.plugins.stripe.setPublishableKey('pk_test_1Z2FRvwJiwCHAZNGAo9XBQNP00FmoJab2a');
+            
+            
+            
+        }).on('click', '.show-screen', function (e) {
+            e.preventDefault();
+            
+            var $this = $(this);
+            var _attr = $this.attr('data-screen');
+            var $screen = $('#' + _attr);
+            
+            console.log($this, _attr, $screen);
+            
+            $this.closest('.screen').slideUp(200);
+            $screen.slideDown(200);
+        });
+        
     },
 
     // deviceready Event Handler
@@ -41,10 +62,15 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        
+        
         window.plugins.touchid.isAvailable(
             function(type) {alert(type)}, // type returned to success callback: 'face' on iPhone X, 'touch' on other devices
             function(msg) {alert('not available, message: ' + msg)} // error handler: no TouchID available
         );
+        
+        
+        
         
     },
 

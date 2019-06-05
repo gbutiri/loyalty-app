@@ -2,7 +2,10 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src https://iseestudios.com:*">
+        <!--
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src https://iseestudios.com:*">-->
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
 
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -75,8 +78,29 @@
                     
                     
                     <div id="scr_dashboard" class="screen">
-                        <a href="#" id="btn_logout">Logout</a>
+                        <div class="clearfix">
+                            <a href="#" id="btn_logout" class="float-right">Logout</a>
+                        </div>
                         <h1 class="mt-3">Welcome!</h1>
+                        
+                        <div class="mt-5 mb-5">
+                                
+                            <label>Balance</label>
+                            <div>$<span>0.00</span></div>
+                        </div>
+                        
+                        <a href="#" class="show-screen" data-screen="scr_load_up">Load Money</a>
+                    </div>
+                    
+                    
+                    <div id="scr_load_up" class="screen">
+                        <div class="clearfix">
+                            <a href="#" id="btn_logout" class="float-right">Logout</a>
+                            <a href="#" class="show-screen float-left" data-screen="scr_dashboard">Close</a>
+                        </div>
+                        <h1 class="mt-3">Load up!</h1>
+                        
+                        
                         
                     </div>
                     
